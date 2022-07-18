@@ -1,0 +1,15 @@
+from pyowm import OWM
+
+owm = OWM('203e2d94fdf9c2a98ec6a58c097a676a')
+mgr = owm.weather_manager()
+
+observation = mgr.weather_at_place('Москва,РФ')
+w = observation.weather
+
+print(w.detailed_status)
+print(w.wind())
+print(w.humidity)
+print(w.temperature('celsius'))
+print(w.rain)
+print(w.heat_index)
+print(w.clouds)
